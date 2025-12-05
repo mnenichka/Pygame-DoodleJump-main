@@ -102,10 +102,11 @@ class MPCController:
             center = p.x + p.width / 2
             dx = center - px
             dy = p.y - py
-            d = math.sqrt(dx*dx + dy*dy)
-            if d < best_dist:
-                best_dist = d
-                best = p
+            if dy > 0:
+                d = math.sqrt(dx*dx + dy*dy)
+                if d < best_dist:
+                    best_dist = d
+                    best = p
 
         return best
 
